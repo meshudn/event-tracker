@@ -16,7 +16,7 @@ router.route('/:id').get((request, response)=>{
 
 //deleting an Event..
 router.route('/:id').delete((request, response)=>{
-    Event.findById(request.params.id)
+    Event.findByIdAndDelete(request.params.id)
         .then(() => response.json("Event deleted successfully!"))
         .catch(err => response.status(400).json('Error' + err));
 });
